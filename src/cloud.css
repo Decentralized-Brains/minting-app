@@ -1,0 +1,194 @@
+/* hero cloud animation start*/
+.cloud-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.cloud1 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 150px;
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: moveClouds1 14s linear infinite;
+  left: 200px;
+  top: 100px;
+  background-image: url("./assets/bgassets/c1.png");
+}
+@keyframes moveClouds1 {
+  0% {
+    left: -400px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.cloud2 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 150px;
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: moveClouds2 12s linear infinite;
+  left: 200px;
+  top: 500px;
+  background-image: url("./assets/bgassets/c2.png");
+}
+
+@keyframes moveClouds2 {
+  0% {
+    left: -200px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.cloud3 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 150px;
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: moveClouds3 14s linear infinite;
+  left: -200px;
+  top: 700px;
+  background-image: url("./assets/bgassets/c3.png");
+}
+
+@keyframes moveClouds3 {
+  0% {
+    left: -300px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.cloud4 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 150px;
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: moveClouds4 20s linear infinite;
+  left: -600px;
+  top: 300px;
+  background-image: url("./assets/bgassets/c4.png");
+}
+
+@keyframes moveClouds4 {
+  0% {
+    left: -300px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.cloud5 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 150px;
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: moveClouds5 13s linear infinite;
+  left: -100px;
+  top: 450px;
+  background-image: url("./assets/bgassets/c5.png");
+}
+
+@keyframes moveClouds5 {
+  0% {
+    left: -300px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.cloud6 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 150px;
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: moveClouds6 15s linear infinite;
+  left: -100px;
+  top: 250px;
+  background-image: url("./assets/bgassets/c6.png");
+}
+
+@keyframes moveClouds6 {
+  0% {
+    left: -300px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.cloud7 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 150px;
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: moveClouds7 12s linear infinite;
+  left: -100px;
+  top: 500px;
+  background-image: url("./assets/bgassets/c7.png");
+}
+
+@keyframes moveClouds7 {
+  0% {
+    left: -300px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.cloud8 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 150px;
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: moveClouds8 18s linear infinite;
+  left: 150px;
+  top: 280px;
+  background-image: url("./assets/bgassets/c8.png");
+}
+
+@keyframes moveClouds8 {
+  0% {
+    left: -300px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* hero cloud animation end*/

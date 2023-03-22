@@ -1,0 +1,25 @@
+import React from "react";
+import Marquee from "react-fast-marquee";
+import { MarqueeData } from "../data/Data";
+
+const LeftMarquee = () => {
+  return (
+    <div className="transform -rotate-12 ">
+      <Marquee gradient={false} speed={100} pauseOnHover={true}>
+        {MarqueeData.map((item) => {
+          return (
+            <div className="flex px-2 mt-4">
+              <img
+                src={item.img}
+                alt=""
+                className="w-16 sm:w-32 h-16 sm:h-32 rounded"
+              />
+            </div>
+          );
+        })}
+      </Marquee>
+    </div>
+  );
+};
+
+export default LeftMarquee;
