@@ -8,16 +8,16 @@ import { PopUp } from "./animation";
 
 const Hero = () => {
   return (
-    <div className="">
-      <div class="cloud-container">
-        <div class="cloud1"></div>
-        <div class="cloud2"></div>
-        <div class="cloud3"></div>
-        <div class="cloud4"></div>
-        <div class="cloud5"></div>
-        <div class="cloud6"></div>
-        <div class="cloud7"></div>
-        <div class="cloud8"></div>
+    <div>
+      <div className="cloud-container">
+        <div className="cloud1"></div>
+        <div className="cloud2"></div>
+        <div className="cloud3"></div>
+        <div className="cloud4"></div>
+        <div className="cloud5"></div>
+        <div className="cloud6"></div>
+        <div className="cloud7"></div>
+        <div className="cloud8"></div>
       </div>
 
       <motion.div
@@ -42,9 +42,8 @@ const Hero = () => {
                 opacity: [0.5, 1, 0.5],
                 transition: { duration: 1, repeat: Infinity },
               }}
-              style={{ display: "inline-block", fontSize: "2rem" }}
             >
-              <BsFillStarFill className="absolute bottom-24 -right-0 md:-right-6 text-4xl md:text-6xl text-yellow-400 z-10 hover:rotate-90 duration-300" />
+              <BsFillStarFill className="absolute bottom-24 right-0 md:-right-6 text-4xl md:text-6xl text-yellow-400 z-10 hover:rotate-90 duration-300" />
             </motion.div>
           </h1>
         </motion.div>
@@ -65,8 +64,8 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="px-16 text-xl text-center pt-2 mt-6 z-10"
         >
-          <div class="absolute -top-5 h-28 w-3 animate-shine bg-[#f3f3f3]  shadow-[0_0_10px] bg-opacity-50"></div>
-          <div class="absolute -top-5 left-16 h-28 w-5 animate-shine bg-[#f5f3f3]  shadow-[0_0_10px] bg-opacity-50"></div>
+          <div className="absolute -top-5 h-28 w-3 animate-shine bg-[#f3f3f3]  shadow-[0_0_10px] bg-opacity-50"></div>
+          <div className="absolute -top-5 left-16 h-28 w-5 animate-shine bg-[#f5f3f3]  shadow-[0_0_10px] bg-opacity-50"></div>
           Mint
         </motion.button>
       </motion.div>

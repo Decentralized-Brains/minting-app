@@ -56,3 +56,32 @@ export const MarqueeData = [
     img: M11,
   },
 ];
+
+import S1 from "../assets/slider/s1.jpg";
+import S2 from "../assets/slider/s2.jpg";
+import S3 from "../assets/slider/s3.jpg";
+import S4 from "../assets/slider/s4.jpg";
+import S5 from "../assets/slider/s5.jpg";
+
+export const SliderData = [
+  {
+    id: 1,
+    img: S1,
+  },
+  {
+    id: 2,
+    img: S2,
+  },
+  {
+    id: 3,
+    img: S3,
+  },
+  {
+    id: 4,
+    img: S4,
+  },
+  {
+    id: 5,
+    img: S5,
+  },
+];

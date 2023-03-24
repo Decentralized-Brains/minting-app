@@ -8,7 +8,7 @@ const LeftMarquee = () => {
       <Marquee gradient={false} speed={100} pauseOnHover={true}>
         {MarqueeData.map((item) => {
           return (
-            <div className="flex px-2 mt-4">
+            <div className="flex px-2 mt-4" key={item.id}>
               <img
                 src={item.img}
                 alt=""

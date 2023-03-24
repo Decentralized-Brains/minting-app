@@ -3,10 +3,8 @@ import MintImg1 from "../assets/mint/mint1.jpg";
 import MintImg2 from "../assets/mint/mint2.jpg";
 import MintImg3 from "../assets/mint/mint3.jpg";
 import C1 from "../assets/mint/c11.png";
-import C2 from "../assets/mint/c2.png";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { motion } from "framer-motion";
-import { FromRightNormal, FromLeftNormal } from "./animation";
 import "../floating-animation.css";
 
 const Minting = () => {
@@ -31,16 +29,10 @@ const Minting = () => {
     else if (count > maxGuests) setCount(maxGuests);
   };
   return (
-    <div className="bg-[#d9ebf3] z-10 relative mt-44 py-28">
-      <motion.div
-        initial={"offscreen"}
-        whileInView={"onscreen"}
-        transition={{ staggerChildren: 0.2 }}
-        viewport={{ once: false, amount: 0.5 }}
-        className=" container "
-      >
+    <div className="z-10 relative mt-44 py-20">
+      <div className=" container ">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 place-items-center">
-          <motion.div variants={FromLeftNormal} className=" max-w-sm">
+          <div data-aos="fade-up" className=" max-w-sm">
             <h1 className="text-4xl md:text-7xl font-fredoka text-white text-shadow-1 font-outline-2">
               100/10,000
             </h1>
@@ -51,7 +43,7 @@ const Minting = () => {
               >
                 <AiOutlinePlus className="md:text-3xl" />
               </button>
-              <div class=" pt-0">
+              <div className=" pt-0">
                 <input
                   required
                   type="number"
@@ -60,7 +52,7 @@ const Minting = () => {
                   onChange={(event) => {
                     handleCount(event.target.value);
                   }}
-                  class="px-3 py-3 hover:box-shadow-1 duration-300 border-4 border-[#233356] placeholder-slate-300 text-slate-600 relative bg-white rounded text-base md:text-xl outline-none focus:outline-none focus:ring w-full"
+                  className="px-3 py-3 hover:box-shadow-1 duration-300 border-4 border-[#233356] placeholder-slate-300 text-slate-600 relative bg-white rounded text-base md:text-xl outline-none focus:outline-none focus:ring w-full"
                 />
               </div>
               <button
@@ -76,8 +68,8 @@ const Minting = () => {
               transition={{ duration: 0.8 }}
               className="px-16 text-xl md:text-4xl text-center py-2  mt-6 z-10 w-full"
             >
-              <div class="absolute -top-5 h-28 w-3 animate-shine bg-[#f3f3f3]  shadow-[0_0_10px] bg-opacity-50"></div>
-              <div class="absolute -top-5 left-16 h-28 w-5 animate-shine bg-[#f5f3f3]  shadow-[0_0_10px] bg-opacity-50"></div>
+              <div className="absolute -top-5 h-28 w-3 animate-shine bg-[#f3f3f3]  shadow-[0_0_10px] bg-opacity-50"></div>
+              <div className="absolute -top-5 left-16 h-28 w-5 animate-shine bg-[#f5f3f3]  shadow-[0_0_10px] bg-opacity-50"></div>
               Mint
             </motion.button>
             <p className="text-[#233356] mt-8">
@@ -87,13 +79,13 @@ const Minting = () => {
               igrated to the cleaner and warner network of Solana. Drawn by and
               assemmbled by code, not one Whalies is the same!!
             </p>
-          </motion.div>
-          <motion.div className="relative group" variants={FromRightNormal}>
+          </div>
+          <div data-aos="fade-up" className="relative group">
             <div className="z-20 ">
               <img
                 src={MintImg1}
                 alt=""
-                className="h-96 max-w-xs  rounded-t-full border-8 border-white"
+                className="h-60 sm:h-96 max-w-xs  rounded-t-full border-8 border-white"
               />
             </div>
             <div className="hidden md:flex absolute top-0 left-0 group-hover:left-40 transform group-hover:rotate-12 -z-10 duration-300">
@@ -116,9 +108,9 @@ const Minting = () => {
             <div className="absolute bottom-0 right-0 md:-right-10 floating">
               <img src={C1} alt="" />
             </div>
-          </motion.div>
+          </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };

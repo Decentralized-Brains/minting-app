@@ -13,7 +13,7 @@ const RightMarquee = () => {
       >
         {MarqueeData.map((item) => {
           return (
-            <div className="flex px-2">
+            <div className="flex px-2" key={item.id}>
               <img
                 src={item.img}
                 alt=""
