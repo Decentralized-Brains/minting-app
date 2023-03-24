@@ -4,7 +4,7 @@ import { MarqueeData } from "../data/Data";
 
 const LeftMarquee = () => {
   return (
-    <div className="transform -rotate-12 ">
+    <div className="transform rotate-0 md:-rotate-12 ">
       <Marquee gradient={false} speed={100} pauseOnHover={true}>
         {MarqueeData.map((item) => {
           return (

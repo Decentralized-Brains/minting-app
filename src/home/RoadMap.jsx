@@ -3,7 +3,15 @@ import React from "react";
 const RoadMap = () => {
   return (
     <div className="container py-20">
-      <ol class="relative max-w-3xl mx-auto border-l-2 border-[#233356]">
+      <div className="flex justify-center flex-col items-center ">
+        <h1
+          data-aos="fade-up"
+          className="text-4xl md:text-7xl font-fredoka text-white text-shadow-1 font-outline-2"
+        >
+          Collectable NFTs
+        </h1>
+      </div>
+      <ol class="relative max-w-3xl mx-auto border-l-2 border-[#233356] mt-10">
         <li data-aos="fade-up" class="mb-10 ml-12">
           <div class="absolute w-8 h-8 bg-white rounded-full mt-1.5 -left-4 border-2 border-[#233356] box-shadow-1"></div>
           <time class="mb-1 text-sm font-normal leading-none text-[#233356]">

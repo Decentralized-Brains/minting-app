@@ -29,7 +29,7 @@ const Minting = () => {
     else if (count > maxGuests) setCount(maxGuests);
   };
   return (
-    <div className="z-10 relative mt-44 py-20">
+    <div className="z-10 relative mt-0 md:mt-44 py-20">
       <div className=" container ">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 place-items-center">
           <div data-aos="fade-up" className=" max-w-sm">
