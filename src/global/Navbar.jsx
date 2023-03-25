@@ -19,18 +19,18 @@ const Navbar = () => {
     },
     {
       id: 2,
-      link: "about us",
+      link: "minitng",
       img: Carrot,
     },
     {
       id: 3,
-      link: "roadmap",
-      img: Rubber,
+      link: "utility",
+      img: Bowl,
     },
     {
       id: 4,
-      link: "utility",
-      img: Bowl,
+      link: "roadmap",
+      img: Rubber,
     },
   ];
 

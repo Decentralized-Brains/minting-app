@@ -4,7 +4,6 @@ import MintImg2 from "../assets/mint/mint2.jpg";
 import MintImg3 from "../assets/mint/mint3.jpg";
 import C1 from "../assets/mint/c11.png";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
-import { motion } from "framer-motion";
 import "../floating-animation.css";
 
 const Minting = () => {
@@ -29,7 +28,7 @@ const Minting = () => {
     else if (count > maxGuests) setCount(maxGuests);
   };
   return (
-    <div className="z-10 relative mt-0 md:mt-44 py-20">
+    <div className="z-10 relative mt-0 md:mt-44 py-20" id="minitng">
       <div className=" container ">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 place-items-center">
           <div data-aos="fade-up" className=" max-w-sm">
@@ -38,10 +37,10 @@ const Minting = () => {
             </h1>
             <div className="flex justify-between items-center mt-5">
               <button
-                onClick={() => incrementCount()}
+                onClick={() => decrementCount()}
                 className="rounded-full px-2 py-2"
               >
-                <AiOutlinePlus className="md:text-3xl" />
+                <AiOutlineMinus className="md:text-3xl" />
               </button>
               <div className=" pt-0">
                 <input
@@ -56,22 +55,17 @@ const Minting = () => {
                 />
               </div>
               <button
-                onClick={() => decrementCount()}
+                onClick={() => incrementCount()}
                 className="rounded-full px-2 py-2"
               >
-                <AiOutlineMinus className="md:text-3xl" />
+                <AiOutlinePlus className="md:text-3xl" />
               </button>
             </div>
-            <motion.button
-              animate={{ opacity: 1, y: 0 }}
-              initial={{ opacity: 0, y: 50 }}
-              transition={{ duration: 0.8 }}
-              className="px-16 text-xl md:text-4xl text-center py-2  mt-6 z-10 w-full"
-            >
+            <button className="px-16 text-xl md:text-4xl text-center py-2  mt-6 z-10 w-full">
               <div className="absolute -top-5 h-28 w-3 animate-shine bg-[#f3f3f3]  shadow-[0_0_10px] bg-opacity-50"></div>
               <div className="absolute -top-5 left-16 h-28 w-5 animate-shine bg-[#f5f3f3]  shadow-[0_0_10px] bg-opacity-50"></div>
               Mint
-            </motion.button>
+            </button>
             <p className="text-[#233356] mt-8">
               10,000 uniquely generated Whalies that have igrated to the cleaner
               and warner network of Solana. Drawn by and assemmbled by code, not

@@ -8,7 +8,7 @@ import { PopUp } from "./animation";
 
 const Hero = () => {
   return (
-    <div>
+    <div id="home">
       <div className="cloud-container">
         <div className="cloud1"></div>
         <div className="cloud2"></div>
@@ -36,8 +36,6 @@ const Hero = () => {
           <h1 className="relative">
             Whalies NFT
             <motion.div
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.8 }}
               animate={{
                 opacity: [0.5, 1, 0.5],
                 transition: { duration: 1, repeat: Infinity },
@@ -47,27 +45,17 @@ const Hero = () => {
             </motion.div>
           </h1>
         </motion.div>
-        <motion.p
-          animate={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 50 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-2xl text-center pt-2 text-[#233356D6]"
-        >
+        <p className="max-w-2xl text-center pt-2 text-[#233356D6]">
           10,000 uniquely generated Whalies that have igrated to the cleaner and
           warner network of Solana. Drawn by and assemmbled by code, not one
           Whalies is the same!
-        </motion.p>
+        </p>
 
-        <motion.button
-          animate={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 50 }}
-          transition={{ duration: 0.8 }}
-          className="px-16 text-xl text-center pt-2 mt-6 z-10"
-        >
+        <button className="px-16 text-xl text-center pt-2 mt-6 z-10">
           <div className="absolute -top-5 h-28 w-3 animate-shine bg-[#f3f3f3]  shadow-[0_0_10px] bg-opacity-50"></div>
           <div className="absolute -top-5 left-16 h-28 w-5 animate-shine bg-[#f5f3f3]  shadow-[0_0_10px] bg-opacity-50"></div>
           Mint
-        </motion.button>
+        </button>
       </motion.div>
       <RightMarquee />
       <LeftMarquee />
