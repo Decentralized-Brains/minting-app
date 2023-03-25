@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import MintImg1 from "../assets/mint/mint1.jpg";
-import MintImg2 from "../assets/mint/mint2.jpg";
-import MintImg3 from "../assets/mint/mint3.jpg";
+import MintImg1 from "../assets/mint/mint1.png";
+import MintImg2 from "../assets/mint/mint2.png";
+import MintImg3 from "../assets/mint/mint3.png";
 import C1 from "../assets/mint/c11.png";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import "../floating-animation.css";
@@ -75,7 +75,7 @@ const Minting = () => {
             </p>
           </div>
           <div data-aos="fade-up" className="relative group">
-            <div className="z-20 ">
+            <div className="z-10 ">
               <img
                 src={MintImg1}
                 alt=""
