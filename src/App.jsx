@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 import Navbar from "./global/Navbar";
 import Hero from "./home/Hero";
@@ -14,7 +14,7 @@ function App() {
     <div>
       <Navbar account={account} setAccount={setAccount} />
       <Hero />
-      <Minitng />
+      <Minitng account={account} setAccount={setAccount} />
       <Rarity />
       <Slider />
       <RoadMap />

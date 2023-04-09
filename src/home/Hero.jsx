@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-scroll";
 import "../cloud.css";
 import { BsFillStarFill } from "react-icons/bs";
 import { motion } from "framer-motion";
@@ -54,7 +55,10 @@ const Hero = () => {
         <button className="px-16 text-xl text-center pt-2 mt-6 z-10">
           <div className="absolute -top-5 h-28 w-3 animate-shine bg-[#f3f3f3]  shadow-[0_0_10px] bg-opacity-50"></div>
           <div className="absolute -top-5 left-16 h-28 w-5 animate-shine bg-[#f5f3f3]  shadow-[0_0_10px] bg-opacity-50"></div>
-          Mint
+
+          <Link to="minitng" smooth duration={500}>
+            Mint
+          </Link>
         </button>
       </motion.div>
       <RightMarquee />

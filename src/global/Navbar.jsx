@@ -115,7 +115,7 @@ const Navbar = ({ account, setAccount }) => {
             <div className="absolute -top-5 left-16 h-28 w-5 animate-shine bg-[#f5f3f3]  shadow-[0_0_10px] bg-opacity-50"></div>
             {account ? account.slice(0, 4) + "..." + account.slice(account.length - 4, account.length) : "Connect Wallet "}
           </button>
-          <div className="ml-3">
+          <div className="mx-4">
             {account ? (
               <button onClick={logoutMeta}>
                 <div className="absolute -top-5 h-28 w-3 animate-shine bg-[#f3f3f3]  shadow-[0_0_10px] bg-opacity-50"></div>

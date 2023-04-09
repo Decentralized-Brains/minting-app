@@ -6,7 +6,7 @@ import C1 from "../assets/mint/c11.png";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import "../floating-animation.css";
 
-const Minting = () => {
+const Minting = ({ account, setAccount }) => {
   const [count, setCount] = useState(1);
   const maxGuests = 999;
   const minGuests = 1;
