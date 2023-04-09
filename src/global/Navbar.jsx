@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-scroll";
 import Carrot from "../assets/navbar/carrot.png";
@@ -52,7 +52,6 @@ const Navbar = ({ account, setAccount }) => {
         method: "eth_requestAccounts",
       });
       setAccount(accounts[0]);
-      getBalanceOfUser(accounts[0]);
 
       toast.warn(
         "Wallet " +
@@ -70,7 +69,6 @@ const Navbar = ({ account, setAccount }) => {
   const logoutMeta = async () => {
     toast.success("Wallet Disconnected!");
     setAccount("");
-    setAccountBalance("");
   };
 
   return (
@@ -106,6 +104,7 @@ const Navbar = ({ account, setAccount }) => {
             ))}
             {/* shinnig button inifinity loop */}
           </ul>
+
           <button
             className="mx-4"
             onClick={connectWallet}
@@ -113,7 +112,11 @@ const Navbar = ({ account, setAccount }) => {
           >
             <div className="absolute -top-5 h-28 w-3 animate-shine bg-[#f3f3f3]  shadow-[0_0_10px] bg-opacity-50"></div>
             <div className="absolute -top-5 left-16 h-28 w-5 animate-shine bg-[#f5f3f3]  shadow-[0_0_10px] bg-opacity-50"></div>
-            {account ? account.slice(0, 4) + "..." + account.slice(account.length - 4, account.length) : "Connect Wallet "}
+            {account
+              ? account.slice(0, 4) +
+                "..." +
+                account.slice(account.length - 4, account.length)
+              : "Connect Wallet "}
           </button>
           <div className="mx-4">
             {account ? (
@@ -131,6 +134,7 @@ const Navbar = ({ account, setAccount }) => {
           </div>
         </motion.div>
       </div>
+
       {/* this is for small screen devices */}
 
       <div
@@ -159,6 +163,18 @@ const Navbar = ({ account, setAccount }) => {
           ))}
         </ul>
       </div>
+
+      {/* this is for toastify popup  */}
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        draggable
+        theme="dark"
+      />
     </div>
   );
 };
