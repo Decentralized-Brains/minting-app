@@ -1,12 +1,16 @@
+import { ethers } from "ethers";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 import React, { useState } from "react";
 import MintImg1 from "../assets/mint/mint1.png";
 import MintImg2 from "../assets/mint/mint2.png";
 import MintImg3 from "../assets/mint/mint3.png";
 import C1 from "../assets/mint/c11.png";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import StorageABI from './storageABI';
 import "../floating-animation.css";
 
-const Minting = () => {
+const Minting = ({ account, setAccount }) => {
   const [count, setCount] = useState(1);
   const maxGuests = 999;
   const minGuests = 1;
@@ -26,6 +30,21 @@ const Minting = () => {
   const incrementCount = () => {
     if (count < maxGuests) setCount(count + 1);
     else if (count > maxGuests) setCount(maxGuests);
+  };
+  // Minting start here
+  let signer = null;
+  const contractAddress = "0xE1f333d33Ce07BEF6f91C123cB3D022CE822A527";
+  const provider = new ethers.BrowserProvider(window.ethereum);
+
+  // Write to contract
+  const setMinting = async () => {
+    signer = await provider.getSigner();
+
+    let tempContract = new ethers.Contract(contractAddress, StorageABI, signer);
+
+    await tempContract.awardItem();
+
+    toast.success("Minting will be add to Chain.");
   };
   return (
     <div className="z-10 relative mt-0 md:mt-44 py-20" id="minitng">
@@ -61,7 +80,10 @@ const Minting = () => {
                 <AiOutlinePlus className="md:text-3xl" />
               </button>
             </div>
-            <button className="px-16 text-xl md:text-4xl text-center py-2  mt-6 z-10 w-full">
+            <button
+              className="px-16 text-xl md:text-4xl text-center py-2  mt-6 z-10 w-full"
+              onClick={setMinting}
+            >
               <div className="absolute -top-5 h-28 w-3 animate-shine bg-[#f3f3f3]  shadow-[0_0_10px] bg-opacity-50"></div>
               <div className="absolute -top-5 left-16 h-28 w-5 animate-shine bg-[#f5f3f3]  shadow-[0_0_10px] bg-opacity-50"></div>
               Mint

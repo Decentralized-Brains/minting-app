@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-scroll";
 import Carrot from "../assets/navbar/carrot.png";
@@ -7,7 +9,7 @@ import Bowl from "../assets/navbar/mixing-bowl.png";
 import Rubber from "../assets/navbar/rubber-duck.png";
 import { motion } from "framer-motion";
 
-const Navbar = () => {
+const Navbar = ({ account, setAccount }) => {
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
 
@@ -43,6 +45,32 @@ const Navbar = () => {
   const handleNav = () => {
     setNav(!nav);
   };
+  // CONNECT WALLET
+  const connectWallet = async () => {
+    try {
+      const accounts = await window.ethereum.request({
+        method: "eth_requestAccounts",
+      });
+      setAccount(accounts[0]);
+
+      toast.warn(
+        "Wallet " +
+          accounts[0].slice(0, 4) +
+          "...." +
+          accounts[0].slice(accounts[0].length - 5, accounts[0].length) +
+          " connected!"
+      );
+    } catch (error) {
+      console.log("Error connecting...");
+    }
+  };
+
+  // logout meta
+  const logoutMeta = async () => {
+    toast.success("Wallet Disconnected!");
+    setAccount("");
+  };
+
   return (
     <div>
       <div
@@ -76,17 +104,37 @@ const Navbar = () => {
             ))}
             {/* shinnig button inifinity loop */}
           </ul>
-          <button className="mx-4">
+
+          <button
+            className="mx-4"
+            onClick={connectWallet}
+            disabled={account ? true : false}
+          >
             <div className="absolute -top-5 h-28 w-3 animate-shine bg-[#f3f3f3]  shadow-[0_0_10px] bg-opacity-50"></div>
             <div className="absolute -top-5 left-16 h-28 w-5 animate-shine bg-[#f5f3f3]  shadow-[0_0_10px] bg-opacity-50"></div>
-            Connect Wallet
+            {account
+              ? account.slice(0, 4) +
+                "..." +
+                account.slice(account.length - 4, account.length)
+              : "Connect Wallet "}
           </button>
-
+          <div className="mx-4">
+            {account ? (
+              <button onClick={logoutMeta}>
+                <div className="absolute -top-5 h-28 w-3 animate-shine bg-[#f3f3f3]  shadow-[0_0_10px] bg-opacity-50"></div>
+                <div className="absolute -top-5 left-16 h-28 w-5 animate-shine bg-[#f5f3f3]  shadow-[0_0_10px] bg-opacity-50"></div>
+                Disconnect
+              </button>
+            ) : (
+              ""
+            )}
+          </div>
           <div onClick={handleNav} className="block md:hidden text-[#233356]">
             {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
           </div>
         </motion.div>
       </div>
+
       {/* this is for small screen devices */}
 
       <div
@@ -115,6 +163,18 @@ const Navbar = () => {
           ))}
         </ul>
       </div>
+
+      {/* this is for toastify popup  */}
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        draggable
+        theme="dark"
+      />
     </div>
   );
 };
